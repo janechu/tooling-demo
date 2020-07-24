@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { DndProvider } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
 import FASTMessageSystemWorker from "@microsoft/fast-tooling/dist/message-system.min.js";
-import { MessageSystem, MessageSystemDataTypeAction, MessageSystemType } from "@microsoft/fast-tooling";
+import { MessageSystem } from "@microsoft/fast-tooling";
+import { ModularForm } from "@microsoft/fast-tooling-react";
 
 const fastMessageSystemWorker = new FASTMessageSystemWorker();
 let fastMessageSystem: MessageSystem;
@@ -47,19 +50,10 @@ class Example extends React.Component<{}, ExampleState> {
     public render() {
         return (
             <div>
-                <input type="text" value={this.state.data} onChange={this.handleOnChange} />
+                <ModularForm messageSystem={fastMessageSystem} />
                 <pre>{this.state.data}</pre>
             </div>
         );
-    }
-
-    private handleOnChange = (e): void => {
-        fastMessageSystem.postMessage({
-            type: MessageSystemType.data,
-            action: MessageSystemDataTypeAction.update,
-            dataLocation: "",
-            data: e.target.value,
-        });
     }
 
     private handleMessageSystem = (e): void => {
@@ -79,6 +73,8 @@ class Example extends React.Component<{}, ExampleState> {
  * Primary render function for app. Called on store updates
  */
 ReactDOM.render(
-    <Example />,
+    <DndProvider backend={HTML5Backend}>
+        <Example />
+    </DndProvider>,
     document.getElementById("root")
 );
