@@ -1,0 +1,32 @@
+{
+  "name": "tooling-demo",
+  "version": "1.0.0",
+  "description": "A demo for FAST tooling",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janechu/tooling-demo.git"
+  },
+  "author": "Jane Chu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janechu/tooling-demo/issues"
+  },
+  "homepage": "https://github.com/janechu/tooling-demo#readme",
+  "dependencies": {
+    "@microsoft/fast-tooling": "^0.7.0",
+    "@microsoft/fast-tooling-react": "^2.3.1",
+    "html-webpack-plugin": "^4.3.0",
+    "lodash-es": "^4.17.15",
+    "react": "^16.13.1",
+    "ts-loader": "^8.0.1",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "worker-loader": "^2.0.0"
+  }
+}
