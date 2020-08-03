@@ -46,26 +46,26 @@
     csstype "^2.3.0"
     exenv-es6 "^1.0.0"
 
-"@microsoft/fast-tooling-react@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@microsoft/fast-tooling-react/-/fast-tooling-react-2.3.1.tgz#1da7d0c89cbd6a002ada068d45017a55715861df"
-  integrity sha512-bSBNojC2x38qyG2jD/GQ56K9vRJhK5+8/04q/BOM3cNlSx1uKsKcHPCdfdNDRZa+p6/HuZpRNF9/daBiBw4UUg==
+"@microsoft/fast-tooling-react@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@microsoft/fast-tooling-react/-/fast-tooling-react-2.3.2.tgz#7b774f1ec76a0fd0ee61fe09dce53c4545ec09b9"
+  integrity sha512-OyszlBeIYqeMrA3OU86CKAgRXWbbow8uJ2kwFamE5QiFhtl6IihWqYt7fUEbk6A7AFboou8kIz/Gjyu3XQB+KQ==
   dependencies:
     "@microsoft/fast-colors" "^5.1.0"
     "@microsoft/fast-components-class-name-contracts-base" "^4.8.0"
     "@microsoft/fast-components-foundation-react" "^3.2.0"
     "@microsoft/fast-jss-manager-react" "^4.8.0"
     "@microsoft/fast-jss-utilities" "^4.8.0"
-    "@microsoft/fast-tooling" "^0.7.0"
+    "@microsoft/fast-tooling" "^0.8.0"
     "@microsoft/fast-web-utilities" "^4.6.0"
     exenv-es6 "^1.0.0"
     raf-throttle "^2.0.3"
     react-dnd "^9.0.0"
 
-"@microsoft/fast-tooling@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@microsoft/fast-tooling/-/fast-tooling-0.7.0.tgz#a8487eb5ca85fc796c1b9149496f6fa7b4763e47"
-  integrity sha512-fclz9DF6nxyEgj/h2hONM8s+49CQBEGaXA+dfZzhUpGUJJLcZRHoBA/e/Xxf8Qoot5fxiTqpU9wJqgxg7gR13A==
+"@microsoft/fast-tooling@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@microsoft/fast-tooling/-/fast-tooling-0.8.0.tgz#28003057c5173e93926d214cd158bcbe87c8da49"
+  integrity sha512-4uwKWz1ggUc6izzdCJ1j8TzZw32wKsrGmmdW2aCVY2ZAv2M2kf61Ng1TcYTma9FmaQ0RWZ30qWwllSXfOrOs/g==
 
 "@microsoft/fast-web-utilities@^4.6.0":
   version "4.6.0"
