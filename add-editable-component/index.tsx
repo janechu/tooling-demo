@@ -46,7 +46,7 @@ class Example extends React.Component<{}, ExampleState> {
         return (
             <div>
                 <ModularNavigation messageSystem={fastMessageSystem} />
-                <pre>{this.state.data}</pre>
+                <pre>{JSON.stringify(this.state.data, null, 2)}</pre>
                 <ModularForm messageSystem={fastMessageSystem} />
             </div>
         );
@@ -55,7 +55,7 @@ class Example extends React.Component<{}, ExampleState> {
     private handleMessageSystem = (e): void => {
         if (
             e.data &&
-            typeof e.data.data === "string" &&
+            typeof e.data.data !== "undefined" &&
             e.data.data !== this.state.data
         ) {
             this.setState({
