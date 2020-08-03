@@ -38,6 +38,10 @@ Refer to `./add-a-navigation-component`.
 
 The navigation component
 
+# Add component as an editable item
+
+Refer to `./add-editable-component`.
+
 ## Previewing data
 
 Refer to `./add-a-preview-component`.
