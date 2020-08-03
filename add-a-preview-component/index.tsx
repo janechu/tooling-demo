@@ -4,8 +4,8 @@ import { DndProvider } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import FASTMessageSystemWorker from "@microsoft/fast-tooling/dist/message-system.min.js";
 import { MessageSystem } from "@microsoft/fast-tooling";
-import { ModularForm, ModularNavigation } from "@microsoft/fast-tooling-react";
-import { nativeElementExtendedSchemas } from "./native-element-configs";
+import { ModularForm, ModularNavigation, ModularViewer } from "@microsoft/fast-tooling-react";
+import { nativeElementExtendedSchemas } from "./native-element-schemas";
 
 const fastMessageSystemWorker = new FASTMessageSystemWorker();
 let fastMessageSystem: MessageSystem;
@@ -46,7 +46,7 @@ class Example extends React.Component<{}, ExampleState> {
         return (
             <div>
                 <ModularNavigation messageSystem={fastMessageSystem} />
-                <pre>{JSON.stringify(this.state.data, null, 2)}</pre>
+                <ModularViewer messageSystem={fastMessageSystem} iframeSrc="/preview" />
                 <ModularForm messageSystem={fastMessageSystem} />
             </div>
         );
@@ -65,12 +65,16 @@ class Example extends React.Component<{}, ExampleState> {
     };
 }
 
-/**
- * Primary render function for app. Called on store updates
- */
-ReactDOM.render(
-    <DndProvider backend={HTML5Backend}>
-        <Example />
-    </DndProvider>,
-    document.getElementById("root")
-);
+const root: HTMLElement = document.getElementById("root");
+
+if (root) {
+    /**
+     * Primary render function for app. Called on store updates
+     */
+    ReactDOM.render(
+        <DndProvider backend={HTML5Backend}>
+            <Example />
+        </DndProvider>,
+        root
+    );
+}

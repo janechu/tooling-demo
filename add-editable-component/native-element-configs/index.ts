@@ -42,4 +42,4 @@ function mapToJSONSchemas(
 
 mapToJSONSchemas(nativeElementExtendedDefinitions, nativeElementExtendedSchemas);
 
-export { nativeElementExtendedSchemas };
+export { nativeElementExtendedSchemas, nativeElementExtendedDefinitions };
