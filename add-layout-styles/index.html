@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <body style="padding: 0; margin: 0">
+        <div id="root"></div>
+        <%=
+            htmlWebpackPlugin.tags.bodyTags.filter((tag) =>
+                tag.attributes.src.includes('main') ||
+                !tag.attributes.src.startsWith('/preview')
+            ).join('')
+        %>
+    </body>
+</html>

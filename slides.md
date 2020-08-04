@@ -48,11 +48,9 @@ Refer to `./add-a-preview-component`.
 
 The viewer component
 
-## Utilities
+## Re-organize layout
 
-Refer to `./add-component-rendering`.
-
-Show off the mapping functions
+Refer to `./add-layout-styles`.
 
 ## The Form Standard Control
 
