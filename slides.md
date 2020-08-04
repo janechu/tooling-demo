@@ -51,14 +51,3 @@ The viewer component
 ## Re-organize layout
 
 Refer to `./add-layout-styles`.
-
-## The Form Standard Control
-
-Refer to `./add-a-custom-form-control`.
-
-The form standard control template
-
-## Adding validation
-
-Refer to `./add-validation`.
-
