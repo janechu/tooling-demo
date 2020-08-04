@@ -3,9 +3,10 @@ import ReactDOM from "react-dom";
 import { DndProvider } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import FASTMessageSystemWorker from "@microsoft/fast-tooling/dist/message-system.min.js";
-import { MessageSystem } from "@microsoft/fast-tooling";
+import { MessageSystem, MessageSystemType } from "@microsoft/fast-tooling";
 import { ModularForm, ModularNavigation, ModularViewer } from "@microsoft/fast-tooling-react";
-import { nativeElementExtendedSchemas } from "./native-element-schemas";
+import { nativeElementExtendedSchemas } from "./native-element-configs";
+import { previewReady } from "./preview";
 
 const fastMessageSystemWorker = new FASTMessageSystemWorker();
 let fastMessageSystem: MessageSystem;
@@ -20,17 +21,7 @@ class Example extends React.Component<{}, ExampleState> {
 
         if ((window as any).Worker) {
             fastMessageSystem = new MessageSystem({
-                webWorker: fastMessageSystemWorker,
-                dataDictionary: [
-                    {
-                        root: {
-                            schemaId: "div",
-                            data: {}
-                        },
-                    },
-                    "root",
-                ],
-                schemaDictionary: nativeElementExtendedSchemas,
+                webWorker: fastMessageSystemWorker
             });
             fastMessageSystem.add({
                 onMessage: this.handleMessageSystem,
@@ -46,7 +37,7 @@ class Example extends React.Component<{}, ExampleState> {
         return (
             <div>
                 <ModularNavigation messageSystem={fastMessageSystem} />
-                <ModularViewer messageSystem={fastMessageSystem} iframeSrc="/preview" />
+                <ModularViewer messageSystem={fastMessageSystem} iframeSrc="/preview.html" />
                 <ModularForm messageSystem={fastMessageSystem} />
             </div>
         );
@@ -62,10 +53,30 @@ class Example extends React.Component<{}, ExampleState> {
                 data: e.data.data,
             });
         }
+
+        if (
+            e.data &&
+            e.data.type === MessageSystemType.custom &&
+            e.data.value === previewReady
+        ) {
+            fastMessageSystem.postMessage({
+                type: MessageSystemType.initialize,
+                dataDictionary: [
+                    {
+                        root: {
+                            schemaId: "div",
+                            data: {}
+                        },
+                    },
+                    "root",
+                ],
+                schemaDictionary: nativeElementExtendedSchemas,
+            });
+        }
     };
 }
 
-const root: HTMLElement = document.getElementById("root");
+const root: HTMLElement | null = document.getElementById("root");
 
 if (root) {
     /**

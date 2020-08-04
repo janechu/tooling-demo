@@ -6,11 +6,11 @@
         <title><%= htmlWebpackPlugin.options.title %></title>
     </head>
     <body>
-        <div id="preview"></div>
+        <div id="root"></div>
         <%=
             htmlWebpackPlugin.tags.bodyTags.filter((tag) =>
-                tag.attributes.src.includes('preview') ||
-                !tag.attributes.src.startsWith('/main')
+                tag.attributes.src.includes('main') ||
+                !tag.attributes.src.startsWith('/preview')
             ).join('')
         %>
     </body>

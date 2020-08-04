@@ -15,7 +15,7 @@ import {
 } from "@microsoft/fast-tooling/dist/data-utilities/web-component";
 import { nativeElementExtendedDefinitions } from "./native-element-configs";
 
-const previewReady: string = "PREVIEW::READY";
+export const previewReady: string = "PREVIEW::READY";
 let schemaDictionary: SchemaDictionary = {};
 const handleMessage = function(message: MessageEvent): void {
     if (message.origin === location.origin) {
@@ -40,9 +40,10 @@ const handleMessage = function(message: MessageEvent): void {
 }
 
 const render = function(message: DataMessageOutgoing | InitializeMessageOutgoing): void {
-    const previewElement: HTMLElement = document.getElementById("preview");
+    const previewElement: HTMLElement | null = document.getElementById("preview");
 
     if (previewElement) {
+        previewElement.innerText = "";
         previewElement.appendChild(
             mapDataDictionary({
                 dataDictionary: message.dataDictionary,
@@ -81,4 +82,3 @@ window.postMessage(
     },
     "*"
 );
-

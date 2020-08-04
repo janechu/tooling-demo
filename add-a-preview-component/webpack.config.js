@@ -38,7 +38,8 @@ module.exports = (env, args) => {
         plugins: [
             new HtmlWebpackPlugin({
                 title: "FAST tooling demo",
-                inject: "body",
+                inject: false,
+                filename: "index.html",
                 template: path.resolve(appDir, "index.html"),
             }),
             new HtmlWebpackPlugin({
