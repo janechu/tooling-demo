@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const appDir = path.resolve(__dirname, "./demo");
+const appDir = path.resolve(__dirname, "./");
 const outDir = path.resolve(__dirname, "./www");
 
 module.exports = (env, args) => {

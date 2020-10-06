@@ -4,7 +4,7 @@
   "description": "A demo for FAST tooling",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --config=./demo/webpack.config.js"
   },
   "repository": {
     "type": "git",
