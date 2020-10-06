@@ -51,3 +51,11 @@ The viewer component
 ## Re-organize layout
 
 Refer to `./part-8/add-layout-styles`.
+
+## Adding the monaco editor
+
+Refer to `./part-9/add-monaco-editor`
+
+## Adding 2 way editing
+
+Refer to `./part-10/add-two-way-editing`
