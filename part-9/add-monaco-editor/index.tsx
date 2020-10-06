@@ -156,7 +156,7 @@ class Example extends React.Component<{}, ExampleState> {
             e.data.type === MessageSystemType.data ||
             e.data.type === MessageSystemType.initialize
         ) {
-            if (!e.data.options || e.data.options.from !== "monaco-adapter") {
+            if (!e.data.options || e.data.options.from !== "monaco-adaptor") {
                 this.updateEditorContent(e.data.dataDictionary);
             }
         }
